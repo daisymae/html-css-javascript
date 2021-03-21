@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="styles.css" />
     <style>
       div {
-        /* div is block by default and takes up the entire width of the page */
-        /* inline changes that - only take the space they need */
-        /* inline-block: displayed inline, but still have control
-         over style properties of block elements, like width and height */
-        display: inline-block;
+        display: block;
+        background-color: #ccc;
+        /* box model:
+           full size of element is l&r border
+         + l&r margin + l&r padding + width */
+        margin: 25px;
+        border: solid 1px #777;
+        padding: 25px;
         width: 100px;
-        border: solid 1px #333;
+        height: 100px;
       }
     </style>
   </head>
