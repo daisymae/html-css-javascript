@@ -7,52 +7,20 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-      /* tag selector */
-      img {
-        border: solid 1px #777;
-      }
-      /* class selector */
-      .tutorial {
-        border: solid 1px #777;
-      }
-      /* id selector */
-      #tutorial-1 {
-        background-color: #eee;
-      }
-      /* attribute selector */
-      img[src="https://via.placeholder.com/150"]
-      {
-        border: solid 3px #39f;
-      }
-      /* list selectors */
-      h1,
-      h2 {
-        color: #39f;
-      }
-      /* class selector and tag selector */
-      .tutorial,
-      h1 {
-        border: solid 1px #ccc;
-      }
-      /* child combinator selector - target specific child of parent */
-      .tutorial > p {
-        font-size: 1.5em;
+      div {
+        /* div is block by default and takes up the entire width of the page */
+        /* inline changes that - only take the space they need */
+        /* inline-block: displayed inline, but still have control
+         over style properties of block elements, like width and height */
+        display: inline-block;
+        width: 100px;
+        border: solid 1px #333;
       }
     </style>
   </head>
   <body>
-    <h1>Introduction to CSS</h1>
-    <p>These tutorials teach you CSS.</p>
-    <div class="tutorial" id="tutorial-1">
-      <h2>Tutorial 1</h2>
-      <img src="https://via.placeholder.com/150" alt="" />
-      <p>To begin with tutorial 1...</p>
-    </div>
-    <div class="tutorial" id="tutorial-2">
-      <h2>Tutorial 2</h2>
-      <img src="https://via.placeholder.com/100" alt="" />
-      <p>To begin with tutorial 2...</p>
-    </div>
+    <div>Hello</div>
+    <div>World</div>
     <h1 style="color: #b30000">HTML Elements</h1>
     <main>
       <div>Hello World</div>
