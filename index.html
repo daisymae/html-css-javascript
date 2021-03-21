@@ -7,23 +7,25 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
     <style>
-      div {
-        display: block;
-        background-color: #ccc;
-        /* box model:
-           full size of element is l&r border
-         + l&r margin + l&r padding + width */
-        margin: 25px;
-        border: solid 1px #777;
-        padding: 25px;
-        width: 100px;
-        height: 100px;
+      .columns {
+        width: 100%;
+        border: solid 1px #ccc;
+      }
+
+      .columns > div {
+        /* leaves extra space at the end (far left) */
+        width: 49%;
+        border: solid 1px #ddd;
+        /* tell column 2 to float next to column 1 */
+        float: left;
       }
     </style>
   </head>
   <body>
-    <div>Hello</div>
-    <div>World</div>
+    <div class="columns">
+      <div>Column 1</div>
+      <div>Column 2</div>
+    </div>
     <h1 style="color: #b30000">HTML Elements</h1>
     <main>
       <div>Hello World</div>
