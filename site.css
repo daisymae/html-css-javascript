@@ -1,0 +1,95 @@
+/* every element on the page '*' 
+   setting margin to 0 here means we won't 
+   have to deal with any default values (for margins)
+*/
+* {
+  margin: 0;
+}
+
+/* setting height to 100% here helps other
+   styles calculate position on page correctly
+*/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #999;
+}
+
+p {
+  margin: 0.5em 0 0.5em 0;
+}
+
+header {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #a493c0;
+  padding: 10px;
+}
+
+nav a:visited,
+nav a:link {
+  color: #fff;
+  text-decoration: none; /* no underline */
+}
+
+nav > ul {
+  display: inline;
+  padding: 0;
+}
+
+nav > ul > li {
+  display: inline-block; /* stack next to each other */
+  /* inline-block still allows for modifying margins */
+  list-style: none;
+  margin: 0 5px 0 5px;
+}
+
+main {
+  display: block;
+  background-image: url('images/background.png');
+  /* give space for navigation elements */
+  padding-top: 3em;
+  padding-bottom: 3em;
+  /* make sure bottom navigation shows up at the bottom of the page */
+  min-height: 85%;
+}
+
+footer {
+  padding: 15px;
+}
+
+aside,
+article {
+  /* ems are proportional value
+  the larger the fonts, the more padding there will be
+  the smaller the fonts, the less padding
+ */
+  padding: 2em;
+}
+
+aside {
+  /* center text or image */
+  text-align: center;
+}
+
+article {
+  width: 75%;
+}
+
+@media only screen and (min-width: 768px) {
+  /* only applied to screen sizes 768 wide and above */
+  /* display as flex - simple for 2-column layout */
+  main {
+    display: flex;
+  }
+  aside {
+    margin-left: 2%;
+  }
+}
