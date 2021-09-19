@@ -24,7 +24,7 @@
     </style>
   </head>
   <body>
-    <header>
+    <head>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -32,7 +32,40 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-    </header>
+    </head>
+    <script>
+      let firstName = "Craig";
+      let lastName = "Shoemaker";
+      let twitter = "@craigshoemaker";
+
+      let person = {
+        firstName: "Craig",
+        lastName: "Shoemaker",
+        twitter: "@craigshoemaker",
+        greet: function() {
+          console.log('My name is ' + this.firstName);
+        }
+      }
+      person.greet();
+      function greet(name) {
+        let result = '';
+        if(name === "Craig"){
+          result = "Hi Craig!";
+        } else if(name === "Tyler") {
+          result = "Tyler, is that you?";
+        } else {
+          result = "Wait, where's Craig?";
+        }
+        return result;
+    }
+    let name="Craig"
+    let message = greet(name);
+    console.log(message);
+    message = greet("Tyler");
+    console.log(message);
+    message = greet("Jacob");
+    console.log(message);
+    </script>
     <main>
       <aside><img src="images/logo.png" alt="Bethany's Pie Shop" /></aside>
       <article>
