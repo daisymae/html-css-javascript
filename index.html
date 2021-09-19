@@ -27,6 +27,26 @@
     </style>
   </head>
   <body>
+    <button id="click-me">Click Me</button>
+    <script>
+      window.addEventListener('DOMContentLoaded', (e) => {
+        console.log('The page is loaded.');
+
+        let btn = document.querySelector('#click-me');
+        btn.addEventListener('click', (e) => {
+          console.log('The button was clicked.');
+        });
+      });
+      // event for mobile devices only
+      window.addEventListener('orientationchange', (e) => {
+        let screen = window.screen;
+        let angle = screen.orientation.angle;
+        let type = screen.orientation.type;
+        console.log(`angle: ${angle}, type: ${type}`);
+      });
+    </script>
+  </body>
+  <!-- <body>
     <head>
       <nav>
         <ul>
@@ -60,5 +80,5 @@
       </nav>
     </footer>
     <script src="index.js" type="text/javascript"></script>
-  </body>
+  </body> -->
 </html>
