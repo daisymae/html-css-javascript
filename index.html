@@ -34,37 +34,12 @@
       </nav>
     </head>
     <script>
-      let firstName = "Craig";
-      let lastName = "Shoemaker";
-      let twitter = "@craigshoemaker";
-
-      let person = {
-        firstName: "Craig",
-        lastName: "Shoemaker",
-        twitter: "@craigshoemaker",
-        greet: function() {
-          console.log('My name is ' + this.firstName);
-        }
-      }
-      person.greet();
-      function greet(name) {
-        let result = '';
-        if(name === "Craig"){
-          result = "Hi Craig!";
-        } else if(name === "Tyler") {
-          result = "Tyler, is that you?";
-        } else {
-          result = "Wait, where's Craig?";
-        }
-        return result;
-    }
-    let name="Craig"
-    let message = greet(name);
-    console.log(message);
-    message = greet("Tyler");
-    console.log(message);
-    message = greet("Jacob");
-    console.log(message);
+      let array = [100, true, 'JavaScript'];
+      console.log(array[0]);
+      console.log(array.reverse());
+      console.log(array.length);
+      array.push('New Item');
+      console.log(array.length);
     </script>
     <main>
       <aside><img src="images/logo.png" alt="Bethany's Pie Shop" /></aside>
