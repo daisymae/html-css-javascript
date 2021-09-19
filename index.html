@@ -34,12 +34,25 @@
       </nav>
     </head>
     <script>
-      let array = [100, true, 'JavaScript'];
-      console.log(array[0]);
-      console.log(array.reverse());
-      console.log(array.length);
-      array.push('New Item');
-      console.log(array.length);
+      let count = 0;
+      let max = 10;
+      let numbers = [true, 200, 'Hello'];
+      let days = ['Mon', 'Tue', 'Wed'];
+
+      days.forEach((day, index) => {
+        console.log(`day: ${day}, index: ${index}`);
+      });
+      for (let i = 0; i < numbers.length; i++) {
+        console.log(numbers[i]);
+      }
+
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+      }
+      while (count < max) {
+        console.log(count);
+        count = count + 1;
+      }
     </script>
     <main>
       <aside><img src="images/logo.png" alt="Bethany's Pie Shop" /></aside>
