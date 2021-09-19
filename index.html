@@ -21,10 +21,37 @@
         font-size: 1.5em;
         padding: 10px;
       }
+      .dark {
+        background-color: darkblue;
+      }
     </style>
   </head>
   <body>
-    <head>
+    <section id="craig-shoemaker" class="card">
+      <h1>Craig Shoemaker</h1>
+      <ul>
+        <li>
+          <a href="https://twitter.com/craigshoemaker" class="tag">Twitter</a>
+        </li>
+        <li>
+          <a href="https://github.com/craigshoemaker" class="tag">GitHub</a>
+        </li>
+      </ul>
+    </section>
+    <section id="john-papa" class="card">
+      <h1>John Papa</h1>
+      <ul>
+        <li><a href="https://twitter.com/john_papa" class="tag">Twitter</a></li>
+        <li><a href="https://github.com/johnpapa" class="tag">GitHub</a></li>
+      </ul>
+    </section>
+    <script>
+      let links = document.querySelectorAll('.tag');
+      links.forEach((link) => {
+        link.setAttribute('target', '_blank');
+      });
+    </script>
+    <!-- <head>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -34,25 +61,6 @@
       </nav>
     </head>
     <script>
-      let count = 0;
-      let max = 10;
-      let numbers = [true, 200, 'Hello'];
-      let days = ['Mon', 'Tue', 'Wed'];
-
-      days.forEach((day, index) => {
-        console.log(`day: ${day}, index: ${index}`);
-      });
-      for (let i = 0; i < numbers.length; i++) {
-        console.log(numbers[i]);
-      }
-
-      for (let i = 0; i < 10; i++) {
-        console.log(i);
-      }
-      while (count < max) {
-        console.log(count);
-        count = count + 1;
-      }
     </script>
     <main>
       <aside><img src="images/logo.png" alt="Bethany's Pie Shop" /></aside>
@@ -76,6 +84,6 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-    </footer>
+    </footer> -->
   </body>
 </html>
