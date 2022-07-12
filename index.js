@@ -1,1 +1,1 @@
-console.log('Hello form a script file!');
+console.log('Hello from a script file!');

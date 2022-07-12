@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="site.css" type="text/css" />
     <title>Bethany's Pie Shop</title>
     <style>
+      @media only screen and (min-width: 768px) {
+        article {
+          width: 350px;
+        }
+      }
       .input-group {
         margin-bottom: 20px;
       }
@@ -53,7 +58,20 @@
       <aside><img src="images/logo.png" alt="Bethany's Pie Shop" /></aside>
       <article>
         <h1>Order</h1>
+        <!-- Used w/JS to display customer selection on order form -->
+        <div class="pie">
+          <img src="" />
+          <div class="columns">
+            <div class="title"></div>
+            <div class="price"></div>
+          </div>
+          <p class="desc"></p>
+        </div>
+
         <form action="http://localhost:7071/api/post" method="POST">
+          <input type="hidden" id="pie-order" name="pie-order" />
+          <input type="hidden" id="location" name="location" />
+
           <div class="input-group">
             <div><label for="first-name">First name</label></div>
             <div><input type="text" name="first-name" id="first-name" /></div>
@@ -158,6 +176,58 @@
         </ul>
       </nav>
     </footer>
-    <script src="index.js" type="text/javascript"></script>
+    <!-- <script src="index.js" type="text/javascript"></script> -->
   </body>
+  <script>
+    window.addEventListener('DOMContentLoaded', (e) => {
+      let locationBox = document.querySelector('#location');
+
+      let location = {
+        latitude: 'unknown',
+        longitude: 'unknown',
+      };
+
+      const order = localStorage.getItem('order');
+
+      window.navigator.geolocation.getCurrentPosition(
+        (position) => {
+          location = {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          };
+          locationBox.value = JSON.stringify(location);
+          console.log(`latitude: ${position.coords.latitude}`);
+          console.log(`longitude: ${position.coords.longitude}`);
+        },
+
+        (error) => {
+          locationBox.value = JSON.stringify(location);
+          console.log('Error or user did not share location.');
+          console.log(error);
+        }
+      );
+      if (order) {
+        const pieOrder = JSON.parse(order);
+        // get the hidden element
+        const orderInput = document.querySelector('#pie-order');
+
+        // get the document item from above
+        const pie = document.querySelector('.pie');
+
+        const title = pie.querySelector('.title');
+        const price = pie.querySelector('.price');
+        const desc = pie.querySelector('.desc');
+
+        // set the values based on the object that was in localStorage
+        title.innerText = pieOrder.title;
+        price.innerText = pieOrder.price;
+        desc.innerText = pieOrder.desc;
+
+        // set up the image
+        const img = pie.querySelector('img');
+        img.setAttribute('src', `images/${pieOrder.id}.png`);
+        img.setAttribute('alt', pieOrder.title);
+      }
+    });
+  </script>
 </html>
